@@ -1,0 +1,43 @@
+{% extends 'monapay/base_payment.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% trans 'Monapay have successfully created a payment page' %}{% endblock %}
+{% block extra_metaset %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+{% block payment_body %}
+<div class="col-xs-12">
+    <div class="page-header">
+        <h2><i class="fa fa-check-square-o"></i> {% trans 'Successfully created a payment page' %}</h2>
+    </div>
+</div>
+<div class="col-xs-12">
+    {% trans 'Thank you for using monapay. A payment page was successfully created. The followings are the payment page and its secret URL, respectively.' %}
+</div>
+<div class="col-sm-12">
+    <p><strong>{% trans 'Payment page' %}</strong></p>
+    <pre><a href="{{ absolute_payment_url }}" target="_blank">{{ absolute_payment_url }}</a></pre>
+</div>
+<div class="col-sm-12">
+    <p><strong>{% trans 'Secret URL' %}</strong></p>
+    <pre><a href="{{ absolute_secret_url }}" target="_blank">{{ absolute_secret_url }}</a></pre>
+    <p>{% trans 'Everyone can change the details of the content by accessing the secret URL. It is highly recommended that you keep a lid on this URL.' %}{% trans 'You can also see access statistics of your digital product with the secret URL.' %}</p>
+</div>
+<div class="col-sm-12">
+    <p>{% trans 'Moreover, monapay privides a payment button that can be used for personal payments or shopping cart integration.' %}</p>
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-md-4">
+            <img src="{% static 'buttons/buy_small.png' %}">
+        </div>
+        <div class="col-md-8">
+            <pre>&lt;a href=&quot;{{ absolute_payment_url }}&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;Monacoinで購入&quot; src=&quot;{{ absolute_media_url }}buttons/buy_small.png&quot;&gt;&lt;/a&gt;</pre>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'buttons/buy_middle.png' %}">
+        </div>
+        <div class="col-md-8">
+            <pre>&lt;a href=&quot;{{ absolute_payment_url }}&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;Monacoinで購入&quot; src=&quot;{{ absolute_media_url }}buttons/buy_middle.png&quot;&gt;&lt;/a&gt;</pre>
+        </div>
+    </div>
+</div>
+{% endblock %}

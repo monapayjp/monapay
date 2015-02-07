@@ -1,0 +1,61 @@
+{% extends 'monapay/base_payment.html' %}
+{% load i18n %}
+{% block title %}
+{% if item.data.status == "Public" %}{{ item.data.title }}
+{% elif item.data.status == "Private" %}{% trans 'closed product' %}
+{% else %}{% trans 'disuse' %}{% endif %}
+{% endblock %}
+{% block payment_body %}
+{% if item.data.status == "Public" %}
+<div class="col-xs-12">
+    <h2>{{ item.data.title }}</h2>
+    <p>{{ item.data.description|urlizetrunc:60|linebreaks }}</p>
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8">
+            {% include 'monapay/components/social_buttons.html' %}
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <p id="payment-price">{% trans 'Price' %}: {{ item.data.natural_price }} MONA</p>
+        </div>
+    </div>
+    <hr style="margin-top:0">
+</div>
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+            {% if form.errors %}
+            <div class="alert alert-danger">
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+            </div>
+            {% else %}
+            <p>{% blocktrans with natural_price=item.data.natural_price %}To purchase this digital product, please send exactly {{ natural_price }} MONA to the address below and click 'Confirm Payment' button after a few minutes.{% endblocktrans %}</p>
+            {% endif %}
+            <pre id="qr-code"><a href="monacoin:{{ wallet.address }}?amount={{ item.data.natural_price }}">{{ wallet.address }}</a></pre>
+            <form class="form-horizontal" action="." role="form" method="post" accept-charset="UTF-8">
+                {% csrf_token %}
+                <button type="submit" id="payment-button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {% trans 'Confirm Payment' %}</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 text-center">
+            <a href="{{ qrcode }}"><img class="img-thumbnail" src="//chart.googleapis.com/chart?cht=qr&amp;chl={{ qrcode|urlencode }}&amp;choe=UTF-8&amp;chs=170x170" alt="QR code"></a>
+        </div>
+    </div>
+</div>
+{% elif item.data.status == "Private" %}
+<div class="col-xs-12">
+    <h2>{% trans 'This product is closed' %}</h2>
+    <div class="alert alert-danger">
+        <p>{% trans 'You cannot purchase this product.' %}</p>
+    </div>
+</div>
+{% else %}
+<div class="col-xs-12">
+    <h2>{% trans 'This product was suspended' %}</h2>
+    <div class="alert alert-danger">
+        <p>{% trans 'This product was suspended by a copyright holder.' %}</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

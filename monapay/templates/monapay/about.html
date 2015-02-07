@@ -1,0 +1,53 @@
+{% extends 'monapay/base_monapay.html' %}
+{% block title %}monapayについて{% endblock %}
+{% block base_content %}
+<div class="jumbotron" id="section-title">
+    <div class="container">
+        <div class="row">
+            <div class="cols-xs-12" id="motto">
+                <h1>monapayについて</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="section-main">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h2>共同開発者を募集しています</h2>
+            <p>現在、monapayでは共同開発者を募集しています。暗号通貨を盛り上げていきたい方、アイデアを形にできる方は一緒に技術開発に取り組んでみませんか？興味のある方は是非サポートよりご連絡下さい(報酬に関しては応相談)。</p>
+            <h3>必須スキル</h3>
+            <ul>
+                <li>1年以上のプログラミング経験</li>
+                <li>技術的に支障がないレベルで英語のドキュメントが読めること</li>
+                <li>HTML, CSS, Javascriptを用いたUIの設計・実装経験</li>
+                <li>Python, Ruby, Perlのいずれかのプログラミング言語の習得</li>
+            </ul>
+            <h3>歓迎するスキル</h3>
+            <ul>
+                <li>Webアプリケーションにおけるセキュリティ対策のスキル・経験</li>
+                <li>Djangoもしくはそれに類するPython Webフレームワークを用いた開発経験</li>
+                <li>Nagios, Munin, Zabbix等を用いたサービス監視のスキル</li>
+                <li>Chef, Ansible等を用いたサーバプロビジョニングのスキル</li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h2>monapayの今後の予定</h2>
+            <p>monapayでは現在、次の機能実装に取り組んでおります。</p>
+            <dl class="dl-horizontal">
+                <dt>決済機能の充実:</dt><dd>既存の決済機能を充実させます。具体的には、先着○名様限定の決済機能や、公開期間を指定できる機能を実装します。またデジタルコンテンツだけでなく実際の品物とも決済を行えるよう拡張します。</dd>
+                <dt>ショッピングカート:</dt><dd>商品をまとめて購入できるショッピングカートを実装することで、クライアントのブログやウェブサイトをオンラインショップへ簡単に変えることができるようにします。</dd>
+                <dt>他の暗号通貨への対応:</dt><dd>monacoin以外の通貨にも対応できるようにします(予定)。</dd>
+            </dl>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h2>寄付による支援</h2>
+            <p>monapayの取り組みを支持する方は次のアドレスへ寄付をお願いします。このお金はmonapayのインフラ維持と管理に使用されます。</p>
+<pre>
+MONA: <a href="monacoin:MKrJpLy8Dg8mATKdH5zWCYiUVYQGvVW5Sx">MKrJpLy8Dg8mATKdH5zWCYiUVYQGvVW5Sx</a>
+DOGE: <a href="dogecoin:DLmqFCweZvXwgYWNwPjhv4AdoSMKKAuMmG">DLmqFCweZvXwgYWNwPjhv4AdoSMKKAuMmG</a>
+BTC:  <a href="bitcoin:1ETr7EzjvdiYF86wHf7PxX9izVqvL6TFet">1ETr7EzjvdiYF86wHf7PxX9izVqvL6TFet</a>
+</pre>
+        </div>
+    </div>
+</div>
+{% endblock %}

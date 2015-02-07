@@ -1,0 +1,409 @@
+# Monapay Japanese Translation.
+# Copyright (C) Monapay team.
+# This file is distributed under the same license as the Monapay package.
+# admin <notify@monapay.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-17 00:00+0900\n"
+"PO-Revision-Date: 2014-02-03 03:00+0900\n"
+"Last-Translator: admin <XXXXXXXX@mail.monapay.com>\n"
+"Language-Team: admin <XXXXXXXX@mail.monapay.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: monapay/forms.py:35 monapay/forms.py:75
+msgid "You must agree to the terms."
+msgstr "利用規約に同意する必要があります。"
+
+#: monapay/forms.py:46 monapay/forms.py:86
+msgid "Invalid address specified."
+msgstr "正規のアドレスではありません。"
+
+#: monapay/forms.py:49 monapay/forms.py:89 monapay/forms.py:117
+msgid "Internal server error occurred. Please try it again after a few hours."
+msgstr ""
+"内部サーバーエラーです。申し訳ありませんが数時間後にもう一度試行して下さい。"
+
+#: monapay/forms.py:107
+#, python-brace-format
+msgid ""
+"It seems that your transaction does not spread an entire network. Please "
+"click \"Confirm Payment\" button after a few minutes ({minconf} "
+"confirmations are required)."
+msgstr ""
+"まだ送金内容がネットワークに反映されていないようです。少し待機した後に「送金"
+"の確認」ボタンを再度クリックして下さい ({minconf} 確認が必要です)。"
+
+#: monapay/forms.py:112
+#, python-brace-format
+msgid "{0:f} MONA is required to purchase this product."
+msgstr "商品の購入には、あと {0:f} MONA が必要です。"
+
+#: monapay/templates/monapay/create_item_done.html:4
+msgid "Monapay have successfully created a payment page"
+msgstr "決済ページの作成に成功しました"
+
+#: monapay/templates/monapay/create_item_done.html:11
+msgid "Successfully created a payment page"
+msgstr "決済ページの作成に成功しました"
+
+#: monapay/templates/monapay/create_item_done.html:15
+msgid ""
+"Thank you for using monapay. A payment page was successfully created. The "
+"followings are the payment page and its secret URL, respectively."
+msgstr ""
+"monapayをご利用頂きありがとうございます。決済ページは無事に生成されました。生"
+"成された決済ページとシークレットURLはそれぞれ次の通りです。"
+
+#: monapay/templates/monapay/create_item_done.html:18
+msgid "Payment page"
+msgstr "決済ページ"
+
+#: monapay/templates/monapay/create_item_done.html:22
+msgid "Secret URL"
+msgstr "シークレットURL"
+
+#: monapay/templates/monapay/create_item_done.html:24
+msgid ""
+"Everyone can change the details of the content by accessing the secret URL. "
+"It is highly recommended that you keep a lid on this URL."
+msgstr ""
+"シークレットURLにアクセスすることで決済ページの内容を後から変更できます。この"
+"URLを他人に教えてはいけません。"
+
+#: monapay/templates/monapay/create_item_done.html:24
+msgid ""
+"You can also see access statistics of your digital product with the secret "
+"URL."
+msgstr "シークレットURLからあなたの商品のアクセス統計を見ることもできます。"
+
+#: monapay/templates/monapay/create_item_done.html:27
+msgid ""
+"Moreover, monapay privides a payment button that can be used for personal "
+"payments or shopping cart integration."
+msgstr ""
+"さらに、次のコードをブログに張り付けることで、あなたのデジタルコンテンツを簡"
+"単に売り出すこともできます。"
+
+#: monapay/templates/monapay/edit_item.html:5
+msgid "edit the product"
+msgstr "商品の編集"
+
+#: monapay/templates/monapay/edit_item.html:12
+msgid "Statistics"
+msgstr "統計"
+
+#: monapay/templates/monapay/edit_item.html:15
+msgid "Number of purchasers"
+msgstr "購入者数"
+
+#: monapay/templates/monapay/edit_item.html:16
+msgid "Number of visitors"
+msgstr "閲覧者数"
+
+#: monapay/templates/monapay/edit_item.html:17
+msgid "Number of non-purchasers"
+msgstr "非購入者数"
+
+#: monapay/templates/monapay/edit_item.html:25
+msgid "It seems that anyone does not see this product."
+msgstr "だれも本商品を閲覧していないようです。"
+
+#: monapay/templates/monapay/edit_item.html:28
+msgid "Edit the page"
+msgstr "決済ページの編集"
+
+#: monapay/templates/monapay/edit_item.html:29
+msgid "Click the button after changing the following forms."
+msgstr "変更したい項目を編集した後で確定ボタンを押して下さい。"
+
+#: monapay/templates/monapay/edit_item.html:35
+#: monapay/templates/monapay/home.html:30
+msgid "Name"
+msgstr "商品名"
+
+#: monapay/templates/monapay/edit_item.html:37
+#: monapay/templates/monapay/home.html:32
+msgid "Enter your product name"
+msgstr "商品名を入力して下さい。"
+
+#: monapay/templates/monapay/edit_item.html:45
+#: monapay/templates/monapay/home.html:40
+msgid "Description"
+msgstr "説明"
+
+#: monapay/templates/monapay/edit_item.html:47
+#: monapay/templates/monapay/home.html:42
+msgid "Enter a detailed description of your product (option)"
+msgstr "商品の詳しい説明を入力して下さい(オプション)。"
+
+#: monapay/templates/monapay/edit_item.html:55
+#: monapay/templates/monapay/home.html:50
+#: monapay/templates/monapay/payment.html:18
+msgid "Price"
+msgstr "料金"
+
+#: monapay/templates/monapay/edit_item.html:57
+#: monapay/templates/monapay/home.html:52
+msgid "Enter prices of your product"
+msgstr "商品の価格を入力して下さい。"
+
+#: monapay/templates/monapay/edit_item.html:68
+#: monapay/templates/monapay/home.html:63
+msgid "URL"
+msgstr "アドレス"
+
+#: monapay/templates/monapay/edit_item.html:70
+#: monapay/templates/monapay/home.html:65
+msgid "Enter the URL of your product"
+msgstr "決済後に表示するURLを入力してください。"
+
+#: monapay/templates/monapay/edit_item.html:78
+#: monapay/templates/monapay/home.html:73
+msgid "Wallet"
+msgstr "ウオレット"
+
+#: monapay/templates/monapay/edit_item.html:87
+msgid "Close the page"
+msgstr "公開を中止する"
+
+#: monapay/templates/monapay/edit_item.html:87
+msgid ""
+"(Please select this checkbox if you want to close this page. This operation "
+"is irrevocable.)"
+msgstr ""
+"(決済ページを使用できないようにするためには、このチェックボックスをオンにして"
+"下さい。この操作は取り消せません。)"
+
+#: monapay/templates/monapay/edit_item.html:94
+msgid "Change the payment page"
+msgstr "決済ページを変更する"
+
+#: monapay/templates/monapay/edit_item_done.html:3
+#: monapay/templates/monapay/edit_item_done.html:10
+msgid "Monapay have changed the payment page"
+msgstr "決済ページの変更に成功ました"
+
+#: monapay/templates/monapay/edit_item_done.html:12
+msgid "Monapay have successfully changed your payment page."
+msgstr "対象の決済ページの変更に成功しました。"
+
+#: monapay/templates/monapay/home.html:5
+msgid "monacoin payment service"
+msgstr "monacoin決済サービス"
+
+#: monapay/templates/monapay/home.html:9
+#: monapay/templates/monapay/home.html:111
+msgid "How to use"
+msgstr "使い方"
+
+#: monapay/templates/monapay/home.html:10
+msgid "Advantages"
+msgstr "メリット"
+
+#: monapay/templates/monapay/home.html:11
+msgid "Q&amp;A"
+msgstr "質問と回答"
+
+#: monapay/templates/monapay/home.html:14
+msgid "See the list of digital products"
+msgstr "出品されている商品の一覧を見る"
+
+#: monapay/templates/monapay/home.html:23
+msgid "Sell your awesome digital products with monacoin."
+msgstr "眠っているコンテンツをmonacoinで販売しましょう。"
+
+#: monapay/templates/monapay/home.html:24
+msgid ""
+"Monapay provides with a payment page that allows to sell your works easily."
+msgstr ""
+"monapayはあなたのデジタルコンテンツをmonacoinで手軽に販売するための決済サービ"
+"スです。"
+
+#: monapay/templates/monapay/home.html:75
+msgid "Enter the address to receive a charge from your customers"
+msgstr "お客様からの支払いを受け付けるウォレットのアドレスを入力して下さい。"
+
+#: monapay/templates/monapay/home.html:88
+#, python-format
+msgid ""
+"I agree to <a href=\"%(url_terms)s\" target=\"_blank\">Monapay Terms</a>"
+msgstr ""
+"<a href=\"%(url_terms)s\" target=\"_blank\">monapayの利用規約</a>に同意します"
+
+#: monapay/templates/monapay/home.html:99
+msgid "Generate Payment Page"
+msgstr "決済ページを作る"
+
+#: monapay/templates/monapay/home.html:117
+msgid "1. Upload your digital products."
+msgstr "1. デジタルコンテンツをアップロード。"
+
+#: monapay/templates/monapay/home.html:118
+msgid ""
+"Upload your awesome digital products (ex. pictures, books, music, digital "
+"comics) using other web services like Dropbox."
+msgstr ""
+"Dropboxなどの他のサービスを利用して、あなたのデジタルコンテンツをインターネッ"
+"ト上にアップロードします。"
+
+#: monapay/templates/monapay/home.html:125
+msgid "2. Fill in a form."
+msgstr "2. URLと金額を入力。"
+
+#: monapay/templates/monapay/home.html:126
+msgid ""
+"Enter a URL of your digital content and its prices in monapay’s registration "
+"form and generate its payment page."
+msgstr ""
+"monapayの登録フォームに、アップロードしたデジタルコンテンツのURLとその金額を"
+"入力します。"
+
+#: monapay/templates/monapay/home.html:133
+msgid "3. Paste a payment page."
+msgstr "3. 決済ページをWebサイトに貼り付け。"
+
+#: monapay/templates/monapay/home.html:134
+msgid ""
+"Paste its payment URL into your website like blog and SNS. Monapay also "
+"provides you with a payment button for transforming your website into a web "
+"store."
+msgstr ""
+"商品の決済ページのURLやHTMLコードをあなたのWebサイトやブログに貼り付けます。"
+"たったこれだけで、あなたのサイトやブログにMonacoinの決済機能を追加できます。"
+
+#: monapay/templates/monapay/home.html:139
+msgid "Three advantages of using monapay"
+msgstr "monapayを利用する3つのメリット"
+
+#: monapay/templates/monapay/home.html:143
+msgid "Fast and Simple Payment"
+msgstr "簡単、高速な決済"
+
+#: monapay/templates/monapay/home.html:144
+msgid ""
+"All your customers have to do is remit monacoin to a specified address in "
+"the payment page. This monacoin will be immediately transferred into your "
+"wallet."
+msgstr ""
+"お客様にしていただくことは、ただ購入ボタンを押した後に現れるアドレスに"
+"monacoinを入金するだけ。このmonacoinは即座にあなたのウオレットへ振り込まれま"
+"す。"
+
+#: monapay/templates/monapay/home.html:148
+msgid "Low Fee"
+msgstr "低コスト"
+
+#: monapay/templates/monapay/home.html:149
+msgid ""
+"Our transaction fees are just 1.0&#37;. These fees are the most cheapest "
+"price among the existing payment services."
+msgstr ""
+"monapayの仲介手数料は決済金額の1.0&#37;に設定されています。monapayを利用する"
+"ことで、利用者は安価にmonacoinの決済サービスを利用できます。"
+
+#: monapay/templates/monapay/home.html:153
+msgid "No Member Registration"
+msgstr "会員登録なし"
+
+#: monapay/templates/monapay/home.html:154
+msgid ""
+"Monapay do not require any registrations. All you have to do is just upload "
+"your digital contents and fill in the form. Enjoy!"
+msgstr ""
+"monapayを利用するための会員登録は必要ありません。売り出したいコンテンツをアッ"
+"プロードし必要事項を入力するだけで、簡単にmonapayを利用できます。"
+
+#: monapay/templates/monapay/home.html:162
+msgid "Question and Answer"
+msgstr "質問と回答"
+
+#: monapay/templates/monapay/payment.html:5
+#: monapay/templates/monapay/payment_done.html:6
+msgid "closed product"
+msgstr "非公開の商品"
+
+#: monapay/templates/monapay/payment.html:6
+#: monapay/templates/monapay/payment_done.html:7
+msgid "disuse"
+msgstr "廃止"
+
+#: monapay/templates/monapay/payment.html:33
+#, python-format
+msgid ""
+"To purchase this digital product, please send exactly %(natural_price)s MONA "
+"to the address below and click 'Confirm Payment' button after a few minutes."
+msgstr ""
+"この商品を購入するためには、下のアドレスへ%(natural_price)s MONAを正確に送金"
+"し、数分程度待機した後に「送金の確認」ボタンをクリックして下さい。"
+
+#: monapay/templates/monapay/payment.html:38
+msgid "Confirm Payment"
+msgstr "送金の確認"
+
+#: monapay/templates/monapay/payment.html:48
+#: monapay/templates/monapay/payment_done.html:29
+msgid "This product is closed"
+msgstr "この商品は非公開です"
+
+#: monapay/templates/monapay/payment.html:50
+msgid "You cannot purchase this product."
+msgstr "この商品を購入することはできません。"
+
+#: monapay/templates/monapay/payment.html:55
+#: monapay/templates/monapay/payment_done.html:36
+msgid "This product was suspended"
+msgstr "決済中止"
+
+#: monapay/templates/monapay/payment.html:57
+#: monapay/templates/monapay/payment_done.html:38
+msgid "This product was suspended by a copyright holder."
+msgstr "この商品は権利者からの申立により停止されました。"
+
+#: monapay/templates/monapay/payment_done.html:5
+msgid "download the product"
+msgstr "商品のダウンロード"
+
+#: monapay/templates/monapay/payment_done.html:17
+msgid "Payment succeeded"
+msgstr "決済が完了しました"
+
+#: monapay/templates/monapay/payment_done.html:18
+msgid ""
+"Thank you for using monapay. You can download the product by clicking the "
+"link below."
+msgstr ""
+"この度はmonapayをご利用頂きありがとうございました。商品は以下のリンクよりダウ"
+"ンロードできます。"
+
+#: monapay/templates/monapay/payment_done.html:22
+msgid "Download Product"
+msgstr "商品のダウンロード"
+
+#: monapay/templates/monapay/payment_done.html:31
+msgid "You cannot download this product."
+msgstr "この商品をダウンロードすることはできません。"
+
+#: monapay/templates/monapay/payment_done.html:44
+#: monapay/templates/monapay/payment_done.html:46
+msgid "This link was suspended"
+msgstr "このリンクは現在停止されています。"
+
+#: monapay/templates/monapay/terms.html:3
+#: monapay/templates/monapay/terms.html:10
+msgid "Monapay Terms"
+msgstr "利用規約"
+
+#: payment/settings/base.py:75
+msgid "Japanese"
+msgstr "日本語"
+
+#: payment/settings/base.py:76
+msgid "English"
+msgstr "英語"

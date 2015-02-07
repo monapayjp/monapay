@@ -1,0 +1,15 @@
+{% load rest_framework %}
+{% csrf_token %}
+{{ form.non_field_errors }}
+{% for field in form.fields.values %}
+    {% if not field.read_only %}
+    <div class="form-group {% if field.errors %}error{% endif %}">
+        {{ field.label_tag|add_class:"col-sm-2 control-label" }}
+        <div class="col-sm-10">
+            {{ field.widget_html|add_class:"form-control" }}
+            {% if field.help_text %}<span class="help-block">{{ field.help_text }}</span>{% endif %}
+            {% for error in field.errors %}<span class="help-block">{{ error }}</span>{% endfor %}
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}

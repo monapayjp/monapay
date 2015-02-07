@@ -1,0 +1,187 @@
+html, body {
+  height: 100%;
+}
+
+p { line-height: 1.6; }
+h2, h3, h4, h5, h6 {
+    font-style: normal;
+    font-weight: 300;
+}
+h2 { margin-bottom: 20px; }
+
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -80px;
+    padding: 0 0 80px;
+    background-color: #EFECE7;
+}
+
+.navbar-brand {
+	width: 118px;
+	height: 45px;
+	padding: 0;
+	background: url(logo.png) no-repeat center center;
+	background-size: 118px 45px;
+}
+
+#section-title {
+    padding-top: 80px;
+    background-color: #596778;
+}
+#section-invoice {
+    padding-top: 80px;
+    background-color: #f0776c;
+}
+
+#motto {
+    color: #fff;
+}
+#motto h1 {
+    font-size: 40px;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+}
+#motto p {
+    font-size: 18px;
+    text-align: center;
+}
+
+#item-form:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #c4e17f;
+    border-radius: 5px 5px 0 0;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+#item-form {
+    font-size: 16px;
+    line-height: 1.6;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 40px 20px 20px 20px;
+    margin-top: 20px;
+}
+#item-form:after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: inherit;
+    border-bottom: 1px solid #d2d2d2;
+    border-radius: 4px;
+}
+
+#section-qanda {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #363b48;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+#section-qanda p { 
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.item-qanda {
+    margin-bottom: 15px;
+}
+
+#footer {
+    min-height: 80px;
+    padding-top: 20px;
+    background-color: #222;
+}
+
+.footer-nav li:first-child {
+    margin-left: 0;
+}
+
+.footer-nav a { color: #bbbbbb; }
+.footer-nav a:hover {
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.credit {
+    color: #777777;
+    font-size: 14px;
+}
+
+.budges { text-align: right; }
+
+.form-login {
+    background-color: #fff;
+	max-width: 450px;
+	position: relative;
+	margin: 100px auto 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-login-heading {
+    font-size: 24px;
+}
+
+.form-login .checkbox {
+	font-weight: normal;
+}
+
+.form-login-upper {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-login-lower {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-login button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-login p {
+    font-size: 14px;
+}
+
+.form-login a {
+    color: #aaa;
+}
+
+/*******************************************
+ * additional adjustments for mobile phones
+ *******************************************/
+@media (max-width: 767px) {
+    #motto h1 {
+        font-size: 30px;
+        text-align: left;
+        line-height: 1.3;
+    }
+    #motto p {
+        font-size: 16px;
+        text-align: left;
+    }
+    #section-qanda h4 {
+        line-height: 1.3;
+    }
+    #section-qanda p { 
+        padding-left: 0;
+    }
+}

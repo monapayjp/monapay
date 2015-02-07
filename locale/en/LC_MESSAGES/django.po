@@ -1,0 +1,410 @@
+# Monapay Japanese Translation.
+# Copyright (C) Monapay team.
+# This file is distributed under the same license as the Monapay package.
+# admin <notify@monapay.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-17 00:00+0900\n"
+"PO-Revision-Date: 2014-02-03 03:00+0900\n"
+"Last-Translator: admin <XXXXXXXX@mail.monapay.com>\n"
+"Language-Team: admin <XXXXXXXX@mail.monapay.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: monapay/forms.py:35 monapay/forms.py:75
+msgid "You must agree to the terms."
+msgstr "You must agree to the terms."
+
+#: monapay/forms.py:46 monapay/forms.py:86
+msgid "Invalid address specified."
+msgstr "Invalid address specified."
+
+#: monapay/forms.py:49 monapay/forms.py:89 monapay/forms.py:117
+msgid "Internal server error occurred. Please try it again after a few hours."
+msgstr "Internal server error occurred. Please try it again after a few hours."
+
+#: monapay/forms.py:107
+#, python-brace-format
+msgid ""
+"It seems that your transaction does not spread an entire network. Please "
+"click \"Confirm Payment\" button after a few minutes ({minconf} "
+"confirmations are required)."
+msgstr ""
+"It seems that your transaction does not spread an entire network. Please "
+"click \"Confirm Payment\" button after a few minutes ({minconf} "
+"confirmations are required)."
+
+#: monapay/forms.py:112
+#, python-brace-format
+msgid "{0:f} MONA is required to purchase this product."
+msgstr "{0:f} MONA is required to purchase this product."
+
+#: monapay/templates/monapay/create_item_done.html:4
+msgid "Monapay have successfully created a payment page"
+msgstr "Monapay have successfully created a payment page"
+
+#: monapay/templates/monapay/create_item_done.html:11
+msgid "Successfully created a payment page"
+msgstr "Successfully created a payment page"
+
+#: monapay/templates/monapay/create_item_done.html:15
+msgid ""
+"Thank you for using monapay. A payment page was successfully created. The "
+"followings are the payment page and its secret URL, respectively."
+msgstr ""
+"Thank you for using monapay. A payment page was successfully created. The "
+"followings are the payment page and its secret URLs, respectively."
+
+#: monapay/templates/monapay/create_item_done.html:18
+msgid "Payment page"
+msgstr "Payment page"
+
+#: monapay/templates/monapay/create_item_done.html:22
+msgid "Secret URL"
+msgstr "Secret URL"
+
+#: monapay/templates/monapay/create_item_done.html:24
+msgid ""
+"Everyone can change the details of the content by accessing the secret URL. "
+"It is highly recommended that you keep a lid on this URL."
+msgstr ""
+"Everyone can change the details of the content by accessing the secret URL. "
+"It is highly recommended that you keep a lid on this URL."
+
+#: monapay/templates/monapay/create_item_done.html:24
+msgid ""
+"You can also see access statistics of your digital product with the secret "
+"URL."
+msgstr ""
+" You can also see access statistics of your digital product with the secret "
+"URL."
+
+#: monapay/templates/monapay/create_item_done.html:27
+msgid ""
+"Moreover, monapay privides a payment button that can be used for personal "
+"payments or shopping cart integration."
+msgstr ""
+"Moreover, monapay privides a payment button that can be used for personal "
+"payments or shopping cart integration."
+
+#: monapay/templates/monapay/edit_item.html:5
+msgid "edit the product"
+msgstr "edit the product"
+
+#: monapay/templates/monapay/edit_item.html:12
+msgid "Statistics"
+msgstr "Statistics"
+
+#: monapay/templates/monapay/edit_item.html:15
+msgid "Number of purchasers"
+msgstr "Number of purchasers"
+
+#: monapay/templates/monapay/edit_item.html:16
+msgid "Number of visitors"
+msgstr "Number of visitors"
+
+#: monapay/templates/monapay/edit_item.html:17
+msgid "Number of non-purchasers"
+msgstr "Number of non-purchasers"
+
+#: monapay/templates/monapay/edit_item.html:25
+msgid "It seems that anyone does not see this product."
+msgstr "It seems that anyone does not see this product."
+
+#: monapay/templates/monapay/edit_item.html:28
+msgid "Edit the page"
+msgstr "Edit the page"
+
+#: monapay/templates/monapay/edit_item.html:29
+msgid "Click the button after changing the following forms."
+msgstr "Click the button after changing the following forms."
+
+#: monapay/templates/monapay/edit_item.html:35
+#: monapay/templates/monapay/home.html:30
+msgid "Name"
+msgstr "Name"
+
+#: monapay/templates/monapay/edit_item.html:37
+#: monapay/templates/monapay/home.html:32
+msgid "Enter your product name"
+msgstr "Enter your product name"
+
+#: monapay/templates/monapay/edit_item.html:45
+#: monapay/templates/monapay/home.html:40
+msgid "Description"
+msgstr "Description"
+
+#: monapay/templates/monapay/edit_item.html:47
+#: monapay/templates/monapay/home.html:42
+msgid "Enter a detailed description of your product (option)"
+msgstr "Enter a detailed description of your product (option)"
+
+#: monapay/templates/monapay/edit_item.html:55
+#: monapay/templates/monapay/home.html:50
+#: monapay/templates/monapay/payment.html:18
+msgid "Price"
+msgstr "Price"
+
+#: monapay/templates/monapay/edit_item.html:57
+#: monapay/templates/monapay/home.html:52
+msgid "Enter prices of your product"
+msgstr "Enter prices of your product"
+
+#: monapay/templates/monapay/edit_item.html:68
+#: monapay/templates/monapay/home.html:63
+msgid "URL"
+msgstr "URL"
+
+#: monapay/templates/monapay/edit_item.html:70
+#: monapay/templates/monapay/home.html:65
+msgid "Enter the URL of your product"
+msgstr "Enter the URL of your product"
+
+#: monapay/templates/monapay/edit_item.html:78
+#: monapay/templates/monapay/home.html:73
+msgid "Wallet"
+msgstr "Wallet"
+
+#: monapay/templates/monapay/edit_item.html:87
+msgid "Close the page"
+msgstr "Close the page"
+
+#: monapay/templates/monapay/edit_item.html:87
+msgid ""
+"(Please select this checkbox if you want to close this page. This operation "
+"is irrevocable.)"
+msgstr ""
+"(Please select this checkbox if you want to close this page. This operation "
+"is irrevocable.)"
+
+#: monapay/templates/monapay/edit_item.html:94
+msgid "Change the payment page"
+msgstr "Change the payment page"
+
+#: monapay/templates/monapay/edit_item_done.html:3
+#: monapay/templates/monapay/edit_item_done.html:10
+msgid "Monapay have changed the payment page"
+msgstr "Monapay have changed the payment page"
+
+#: monapay/templates/monapay/edit_item_done.html:12
+msgid "Monapay have successfully changed your payment page."
+msgstr "Monapay have successfully changed your payment page."
+
+#: monapay/templates/monapay/home.html:5
+msgid "monacoin payment service"
+msgstr "monacoin payment service"
+
+#: monapay/templates/monapay/home.html:9
+#: monapay/templates/monapay/home.html:111
+msgid "How to use"
+msgstr "How to use"
+
+#: monapay/templates/monapay/home.html:10
+msgid "Advantages"
+msgstr "Advantages"
+
+#: monapay/templates/monapay/home.html:11
+msgid "Q&amp;A"
+msgstr "Q&amp;A"
+
+#: monapay/templates/monapay/home.html:14
+msgid "See the list of digital products"
+msgstr "See the list of digital products"
+
+#: monapay/templates/monapay/home.html:23
+msgid "Sell your awesome digital products with monacoin."
+msgstr "Sell your awesome digital products with monacoin."
+
+#: monapay/templates/monapay/home.html:24
+msgid ""
+"Monapay provides with a payment page that allows to sell your works easily."
+msgstr ""
+"Monapay provides with a payment page that allows to sell your works easily."
+
+#: monapay/templates/monapay/home.html:75
+msgid "Enter the address to receive a charge from your customers"
+msgstr "Enter the address to receive a charge from your customers"
+
+#: monapay/templates/monapay/home.html:88
+#, python-format
+msgid ""
+"I agree to <a href=\"%(url_terms)s\" target=\"_blank\">Monapay Terms</a>"
+msgstr ""
+"I agree to <a href=\"%(url_terms)s\" target=\"_blank\">Monapay Terms</a>"
+
+#: monapay/templates/monapay/home.html:99
+msgid "Generate Payment Page"
+msgstr "Generate Payment Page"
+
+#: monapay/templates/monapay/home.html:117
+msgid "1. Upload your digital products."
+msgstr "1. Upload your digital products."
+
+#: monapay/templates/monapay/home.html:118
+msgid ""
+"Upload your awesome digital products (ex. pictures, books, music, digital "
+"comics) using other web services like Dropbox."
+msgstr ""
+"Upload your awesome digital products (ex. pictures, books, music, digital "
+"comics) using other web services like Dropbox."
+
+#: monapay/templates/monapay/home.html:125
+msgid "2. Fill in a form."
+msgstr "2. Fill in a form."
+
+#: monapay/templates/monapay/home.html:126
+msgid ""
+"Enter a URL of your digital content and its prices in monapay’s registration "
+"form and generate its payment page."
+msgstr ""
+"Enter a URL of your digital content and its prices in monapay’s registration "
+"form and generate its payment page."
+
+#: monapay/templates/monapay/home.html:133
+msgid "3. Paste a payment page."
+msgstr "3. Paste a payment page."
+
+#: monapay/templates/monapay/home.html:134
+msgid ""
+"Paste its payment URL into your website like blog and SNS. Monapay also "
+"provides you with a payment button for transforming your website into a web "
+"store."
+msgstr ""
+"Paste its payment URL into your website like blog and SNS. Monapay also "
+"provides you with a payment button for transforming your website into a web "
+"store."
+
+#: monapay/templates/monapay/home.html:139
+msgid "Three advantages of using monapay"
+msgstr "Three advantages of using monapay"
+
+#: monapay/templates/monapay/home.html:143
+msgid "Fast and Simple Payment"
+msgstr "Fast and Simple Payment"
+
+#: monapay/templates/monapay/home.html:144
+msgid ""
+"All your customers have to do is remit monacoin to a specified address in "
+"the payment page. This monacoin will be immediately transferred into your "
+"wallet."
+msgstr ""
+"All your customers have to do is remit monacoin to a specified address in "
+"the payment page. This monacoin will be immediately transferred into your "
+"wallet."
+
+#: monapay/templates/monapay/home.html:148
+msgid "Low Fee"
+msgstr "Low Fee"
+
+#: monapay/templates/monapay/home.html:149
+msgid ""
+"Our transaction fees are just 1.0&#37;. These fees are the most cheapest "
+"price among the existing payment services."
+msgstr ""
+"Our transaction fees are just 1.0&#37;. These fees are the most cheapest "
+"price among the existing payment services."
+
+#: monapay/templates/monapay/home.html:153
+msgid "No Member Registration"
+msgstr "No Member Registration"
+
+#: monapay/templates/monapay/home.html:154
+msgid ""
+"Monapay do not require any registrations. All you have to do is just upload "
+"your digital contents and fill in the form. Enjoy!"
+msgstr ""
+"Monapay do not require any registrations. All you have to do is just upload "
+"your digital contents and fill in the form. Enjoy!"
+
+#: monapay/templates/monapay/home.html:162
+msgid "Question and Answer"
+msgstr "Question and Answer"
+
+#: monapay/templates/monapay/payment.html:5
+#: monapay/templates/monapay/payment_done.html:6
+msgid "closed product"
+msgstr "closed Product"
+
+#: monapay/templates/monapay/payment.html:6
+#: monapay/templates/monapay/payment_done.html:7
+msgid "disuse"
+msgstr "disuse"
+
+#: monapay/templates/monapay/payment.html:33
+#, python-format
+msgid ""
+"To purchase this digital product, please send exactly %(natural_price)s MONA "
+"to the address below and click 'Confirm Payment' button after a few minutes."
+msgstr ""
+"To purchase this digital product, please send exactly %(natural_price)s MONA "
+"to the address below and click 'Confirm Payment' button after a few minutes."
+
+#: monapay/templates/monapay/payment.html:38
+msgid "Confirm Payment"
+msgstr "Confirm Payment"
+
+#: monapay/templates/monapay/payment.html:48
+#: monapay/templates/monapay/payment_done.html:29
+msgid "This product is closed"
+msgstr "This product is closed"
+
+#: monapay/templates/monapay/payment.html:50
+msgid "You cannot purchase this product."
+msgstr "You cannot purchase this product."
+
+#: monapay/templates/monapay/payment.html:55
+#: monapay/templates/monapay/payment_done.html:36
+msgid "This product was suspended"
+msgstr "This product was suspended"
+
+#: monapay/templates/monapay/payment.html:57
+#: monapay/templates/monapay/payment_done.html:38
+msgid "This product was suspended by a copyright holder."
+msgstr "This product was suspended by a copyright holder."
+
+#: monapay/templates/monapay/payment_done.html:5
+msgid "download the product"
+msgstr "download the product"
+
+#: monapay/templates/monapay/payment_done.html:17
+msgid "Payment succeeded"
+msgstr "Payment succeeded"
+
+#: monapay/templates/monapay/payment_done.html:18
+msgid ""
+"Thank you for using monapay. You can download the product by clicking the "
+"link below."
+msgstr ""
+"Thank you for using monapay. You can download the product by clicking the "
+"link below."
+
+#: monapay/templates/monapay/payment_done.html:22
+msgid "Download Product"
+msgstr "Download Product"
+
+#: monapay/templates/monapay/payment_done.html:31
+msgid "You cannot download this product."
+msgstr "You cannnot download this product."
+
+#: monapay/templates/monapay/payment_done.html:44
+#: monapay/templates/monapay/payment_done.html:46
+msgid "This link was suspended"
+msgstr "This link was suspended"
+
+#: monapay/templates/monapay/terms.html:3
+#: monapay/templates/monapay/terms.html:10
+msgid "Monapay Terms"
+msgstr "Monapay Terms"
+
+#: payment/settings/base.py:75
+msgid "Japanese"
+msgstr "Japanese"
+
+#: payment/settings/base.py:76
+msgid "English"
+msgstr "English"

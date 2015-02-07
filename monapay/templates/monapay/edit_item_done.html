@@ -1,0 +1,14 @@
+{% extends 'monapay/base_payment.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Monapay have changed the payment page' %}{% endblock %}
+{% block extra_metaset %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+{% block payment_body %}
+<div class="col-xs-12">
+    <div class="page-header">
+        <h2>{% trans 'Monapay have changed the payment page' %}</h2>
+    </div>
+    <p>{% trans 'Monapay have successfully changed your payment page.' %}</p>
+</div>
+{% endblock %}

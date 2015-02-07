@@ -1,0 +1,116 @@
+{% extends 'monapay/base_payment.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %}{% trans 'edit the product' %}{% endblock %}
+{% block extra_metaset %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+{% block payment_body %}
+{% if item.data.status == "Public" %}
+<div class="col-xs-12">
+    <div class="page-header"><h2><i class="fa fa-bar-chart-o"></i> {% trans 'Statistics' %}</h2></div>
+    {% if n_visitors != 0 %}
+    <div class="row">
+        <div class="col-xs-4"><h4 class="text-left">{% trans 'Number of purchasers' %}: {{ n_purchasers }} ({{achievement_rate|floatformat:"-1"}}%)</h4></div>
+        <div class="col-xs-4"><h4 class="text-center">{% trans 'Number of visitors' %}: {{ n_visitors }}</h4></div>
+        <div class="col-xs-4"><h4 class="text-right">{% trans 'Number of non-purchasers' %}: {{ n_non_purchasers }}</h4></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: {{ achievement_rate }}%"></div>
+        <div class="progress-bar progress-bar-warning" style="width: {{ non_achievement_rate }}%"></div>
+    </div>
+    {% else %}
+    <div class="alert alert-danger">
+        <p>{% trans 'It seems that anyone does not see this product.'%}</p>
+    </div>
+    {% endif %}
+    <div class="page-header"><h2><i class="fa fa-pencil-square-o"></i> {% trans 'Edit the page' %}</h2></div>
+    <p>{% trans 'Click the button after changing the following forms.' %}</p>
+    <div class="row">
+        <div class="col-xs-12" id="item-form">
+            <form class="form-horizontal" action="." role="form" method="post" accept-charset="UTF-8">
+                {% csrf_token %}
+                <div class="form-group{% if form.title.errors %} has-error{% endif %}"> 
+                    <label for="inputTitle" class="col-sm-2 control-label">{% trans 'Name' %}</label>
+                    <div class="col-sm-10">
+                        {% trans 'Enter your product name' as trans_name %}
+                        {% render_field form.title class="form-control" id="inputTitle" placeholder=trans_name %}
+                        {% if form.title.errors %}{% for error in form.title.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}{% endif %}
+                    </div>
+                </div>
+                <div class="form-group{% if form.description.errors %} has-error{% endif %}"> 
+                    <label for="inputDescription" class="col-sm-2 control-label">{% trans 'Description' %}</label>
+                    <div class="col-sm-10">
+                            {% trans 'Enter a detailed description of your product (option)' as trans_description %}
+                            {% render_field form.description class="form-control" id="inputDescription" placeholder=trans_description rows="3" %}
+                        {% if form.description.errors %}{% for error in form.description.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}{% endif %}
+                    </div>
+                </div>
+                <div class="form-group{% if form.price.errors %} has-error{% endif %}"> 
+                    <label for="inputPrice" class="col-sm-2 control-label">{% trans 'Price' %}</label>
+                    <div class="col-sm-8">
+                        {% trans 'Enter prices of your product' as trans_price %}
+                        {% render_field form.price class="form-control" id="inputAddress" placeholder=trans_price step="0.01" %}
+                        {% if form.price.errors %}{% for error in form.price.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}{% endif %}
+                    </div>
+                    <div class="col-sm-2">
+                        <p style="margin-top: 5px; margin-bottom: 0;"><strong>MONA</strong></p>
+                    </div>
+                </div>
+                <div class="form-group{% if form.secret_link.errors %} has-error{% endif %}"> 
+                    <label for="inputLink" class="col-sm-2 control-label">{% trans 'URL' %}</label>
+                    <div class="col-sm-10">
+                        {% trans 'Enter the URL of your product' as trans_url %}
+                        {% render_field form.secret_link class="form-control" id="inputLink" placeholder=trans_url %}
+                        {% if form.secret_link.errors %}{% for error in form.secret_link.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}{% endif %}
+                    </div>
+                </div>
+                <div class="form-group{% if form.admin_address.errors %} has-error{% endif %}"> 
+                    <label for="inputAddress" class="col-sm-2 control-label">{% trans 'Wallet' %}</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="disabledInput" type="text" placeholder="{{ item.data.admin_address }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                              <label>
+                                  {{ form.pub_flag }}<strong>{% trans 'Close the page' %}</strong> {% trans '(Please select this checkbox if you want to close this page. This operation is irrevocable.)' %}
+                              </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" id="submit-button" class="btn btn-primary btn-lg pull-right">{% trans 'Change the payment page' %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% elif item.data.status == "Private" %}
+<div class="col-xs-12">
+    <h2>公開終了</h2>
+    <div class="alert alert-danger">
+        <p>この商品は公開を終了したため、編集できません。</p>
+    </div>
+</div>
+{% else %}
+<div class="col-xs-12">
+    <h2>決済中止</h2>
+    <div class="alert alert-danger">
+        <p>この商品は権利者からの申立により廃止されました。</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

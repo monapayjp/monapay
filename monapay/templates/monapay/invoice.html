@@ -1,0 +1,24 @@
+{% extends 'monapay/base_monapay.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %}発注書の作成{% endblock %}
+{% block base_content %}
+<div class="jumbotron" id="section-invoice">
+    <div class="container">
+        <div class="row">
+            <div class="cols-xs-12" id="motto">
+                <h1>決済機能の導入がより簡単になりました。</h1>
+                <p>monacoinの決済機能を簡単に組み込むためのAPIもmonapayは提供しています。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="section-main">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>概要</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

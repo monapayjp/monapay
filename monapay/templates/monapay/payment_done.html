@@ -1,0 +1,50 @@
+{% extends 'monapay/base_payment.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block title %}
+{% if item.data.status == "Public" %}{% trans 'download the product' %}
+{% elif item.data.status == "Private" %}{% trans 'closed product' %}
+{% else %}{% trans 'disuse' %}{% endif %}
+{% endblock %}
+{% block extra_metaset %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+{% block payment_body %}
+{% if wallet.payment_status == "Paid" %}
+{% if item.data.status == "Public" %}
+<div class="col-xs-12">
+    <p id="payment-logo"><img src="{% static 'images/payment_done.png' %}"></p>
+    <h2>{% trans 'Payment succeeded' %}</h2>
+    <p>{% trans 'Thank you for using monapay. You can download the product by clicking the link below.' %}</p>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10 text-center">
+            <div id="download-link" class="well well-sm text-center">
+                <p><a class="btn btn-primary btn-lg" href="{{ item.data.secret_link }}"><span class="glyphicon glyphicon-cloud-download"></span> {% trans 'Download Product' %}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif item.data.status == "Private" %}
+<div class="col-xs-12">
+    <h2>{% trans 'This product is closed' %}</h2>
+    <div class="alert alert-danger">
+        <p>{% trans 'You cannot download this product.' %}</p>
+    </div>
+</div>
+{% else %}
+<div class="col-xs-12">
+    <h2>{% trans 'This product was suspended' %}</h2>
+    <div class="alert alert-danger">
+        <p>{% trans 'This product was suspended by a copyright holder.' %}</p>
+    </div>
+</div>
+{% endif %}
+{% elif wallet.payment_status == "Suspension" %}
+<div class="col-xs-12">
+    <h2>{% trans 'This link was suspended' %}</h2>
+    <div class="alert alert-danger">
+        <h2>{% trans 'This link was suspended' %}</h2>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

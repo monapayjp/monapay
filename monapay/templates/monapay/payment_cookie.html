@@ -1,0 +1,11 @@
+{% extends 'monapay/base_payment.html' %}
+{% block title %}cookie エラー{% endblock %}
+{% block payment_body %}
+<div class="col-xs-12">
+    <h2>エラーが発生しました</h2>
+    <div class="alert alert-danger text-center">
+        <p>monapayを利用するためにはcookieを有効にする必要があります。cookieを有効にしてから再度アクセスしてください。</p>
+    </div>
+    <hr>
+</div>
+{% endblock %}

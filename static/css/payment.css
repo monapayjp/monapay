@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+  background-color: #eee;
+}
+
+p { line-height: 1.6; }
+h2, h3, h4, h5, h6 {
+    font-style: normal;
+    font-weight: 300;
+}
+
+#footer { color: #aaa; }
+#footer a { color: #aaa; }
+
+#payment-page {
+    border: 8px solid rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#payment-price {
+    text-align: right;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+#qr-code { font-size: 14px; }
+
+#payment-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+#download-link {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+#payment-logo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*******************************************
+ * additional adjustments for mobile phones
+ *******************************************/
+@media (max-width: 767px) {
+    #payment-page {
+        border: 0;
+        border-radius: 0;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

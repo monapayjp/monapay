@@ -1,0 +1,22 @@
+{% extends 'monapay/base.html' %}
+{% load staticfiles %}
+{% block extra_css %}
+    <link href="{% static 'css/payment.css' %}" rel="stylesheet">
+{% endblock %}
+{% block base_body %}
+<div class="container" id="section-main">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12" id="payment-page">
+        <div class="row">
+        {% block payment_body %}{% endblock %}
+        {% block payment_footer %}
+        <div class="col-xs-12 text-center" id="footer">
+            <hr>
+            <p>© 2014 <a href="{% url 'home' %}">monapay</a>.</p>
+        </div>
+        {% endblock %}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

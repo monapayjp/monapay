@@ -1,0 +1,221 @@
+{% extends 'monapay/base_monapay.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %}{% trans 'monacoin payment service' %}{% endblock %}
+{% block navbar_header %}
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li><a href="#section-main">{% trans 'How to use' %}</a></li>
+        <li><a href="#section-benefits">{% trans 'Advantages' %}</a></li>
+        <li><a href="#section-qanda">{% trans 'Q&amp;A' %}</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <a href="http://monaroad.net/" target="_blank" class="btn btn-danger navbar-btn"><i class="fa fa-star"></i> {% trans 'See the list of digital products' %}</a>
+    </ul>
+</div><!--/.nav-collapse -->
+{% endblock %}
+{% block base_content %}
+<div class="jumbotron" id="section-title">
+    <div class="container">
+        <div class="row">
+            <div class="cols-xs-12" id="motto">
+                <h1>{% trans 'Sell your awesome digital products with monacoin.' %}</h1>
+                <p>{% trans 'Monapay provides with a payment page that allows to sell your works easily.' %}</p>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="item-form">
+                <form class="form-horizontal" action="." role="form" method="post" accept-charset="UTF-8">
+                    {% csrf_token %}
+                    <div class="form-group{% if form.title.errors %} has-error{% endif %}"> 
+                        <label for="inputTitle" class="col-sm-2 control-label">{% trans 'Name' %}</label>
+                        <div class="col-sm-10">
+                            {% trans 'Enter your product name' as trans_name %}
+                            {% render_field form.title class="form-control" id="inputTitle" placeholder=trans_name %}
+                            {% if form.title.errors %}{% for error in form.title.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group{% if form.description.errors %} has-error{% endif %}"> 
+                        <label for="inputDescription" class="col-sm-2 control-label">{% trans 'Description' %}</label>
+                        <div class="col-sm-10">
+                            {% trans 'Enter a detailed description of your product (option)' as trans_description %}
+                            {% render_field form.description class="form-control" id="inputDescription" placeholder=trans_description rows="3" %}
+                            {% if form.description.errors %}{% for error in form.description.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group{% if form.price.errors %} has-error{% endif %}"> 
+                        <label for="inputPrice" class="col-sm-2 control-label">{% trans 'Price' %}</label>
+                        <div class="col-sm-8">
+                            {% trans 'Enter prices of your product' as trans_price %}
+                            {% render_field form.price class="form-control" id="inputAddress" placeholder=trans_price step="0.01" %}
+                            {% if form.price.errors %}{% for error in form.price.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                        <div class="col-sm-2">
+                            <p style="margin-top: 5px; margin-bottom: 0;"><strong>MONA</strong></p>
+                        </div>
+                    </div>
+                    <div class="form-group{% if form.secret_link.errors %} has-error{% endif %}"> 
+                        <label for="inputLink" class="col-sm-2 control-label">{% trans 'URL' %}</label>
+                        <div class="col-sm-10">
+                            {% trans 'Enter the URL of your product' as trans_url %}
+                            {% render_field form.secret_link class="form-control" id="inputLink" placeholder=trans_url %}
+                            {% if form.secret_link.errors %}{% for error in form.secret_link.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group{% if form.admin_address.errors %} has-error{% endif %}"> 
+                        <label for="inputAddress" class="col-sm-2 control-label">{% trans 'Wallet' %}</label>
+                        <div class="col-sm-10">
+                            {% trans 'Enter the address to receive a charge from your customers' as trans_address %}
+                            {% render_field form.admin_address class="form-control" id="inputAddress" placeholder=trans_address %}
+                            {% if form.admin_address.errors %}{% for error in form.admin_address.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group{% if form.tos.errors %} has-error{% endif %}">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    {% url 'terms' as url_terms %}
+                                    {% render_field form.tos %}
+                                    {% blocktrans %}I agree to <a href="{{ url_terms }}" target="_blank">Monapay Terms</a>{% endblocktrans %}
+                                </label>
+                            </div>
+                            {% if form.tos.errors %}{% for error in form.tos.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" id="submit-button" class="btn btn-primary btn-lg pull-right">
+                                <span class="glyphicon glyphicon-ok"></span> {% trans 'Generate Payment Page' %}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="section-main" style="padding-top:40px;">
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <h2 class="text-center" style="padding-bottom:30px;">{% trans 'How to use' %}</h2>
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <img src="{% static 'images/step1.png' %}" alt="step1">
+        </div>
+        <div class="col-md-9 col-sm-7 text-left">
+            <h3>{% trans '1. Upload your digital products.' %}</h3>
+            <p>{% trans 'Upload your awesome digital products (ex. pictures, books, music, digital comics) using other web services like Dropbox.' %}</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3 col-sm-5">
+            <img src="{% static 'images/step2.png' %}" alt="step2">
+        </div>
+        <div class="col-md-9 col-sm-7 text-left">
+            <h3>{% trans '2. Fill in a form.' %}</h3>
+            <p>{% trans 'Enter a URL of your digital content and its prices in monapay’s registration form and generate its payment page.' %}</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3 col-sm-5">
+            <img src="{% static 'images/step3.png' %}" alt="step3">
+        </div>
+        <div class="col-md-9 col-sm-7 text-left">
+            <h3>{% trans '3. Paste a payment page.' %}</h3>
+            <p>{% trans 'Paste its payment URL into your website like blog and SNS. Monapay also provides you with a payment button for transforming your website into a web store.' %}</p>
+        </div>
+    </div>
+    <div class="row text-center" id="section-benefits" style="padding-top:40px;">
+        <div class="col-xs-12">
+            <h2>{% trans 'Three advantages of using monapay' %}</h2>
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle" src="{% static 'images/fast_payment.png' %}">
+            <h3>{% trans 'Fast and Simple Payment' %}</h3>
+            <p>{% trans 'All your customers have to do is remit monacoin to a specified address in the payment page. This monacoin will be immediately transferred into your wallet.' %}</p>
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle" src="{% static 'images/low_fee.png' %}">
+            <h3>{% trans 'Low Fee' %}</h3>
+            <p>{% trans 'Our transaction fees are just 1.0&#37;. These fees are the most cheapest price among the existing payment services.' %}</p>
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle" src="{% static 'images/no_registration.png' %}">
+            <h3>{% trans 'No Member Registration' %}</h3>
+            <p>{% trans 'Monapay do not require any registrations. All you have to do is just upload your digital contents and fill in the form. Enjoy!' %}</p>
+        </div>
+    </div>
+</div>
+<div class="jumbotron" id="section-qanda" style="padding-top:40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-center">{% trans 'Question and Answer' %}</h2>
+                <h3><i class="fa fa-info-circle"></i> monacoinについて</h3>
+                <div class="row">
+                    <div class="col-xs-12 item-qanda">
+                        <h4>monacoinとは一体何ですか？</h4>
+                        <p>monacoinは日本の巨大掲示板である2chから生まれた、ビットコインから派生したp2pの暗号通貨です。monacoinを利用することで、利用者はあらゆる電子上の取引を、高速かつ低コストに行うことができます。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>ビットコインとの違いについて教えてください。</h4>
+                        <p>monacoinは日本発の暗号通貨であるため、ビットコインとは異なり日本での利用者が非常に多いことが特徴です。技術的にはブロックチェインの認証に使用するハッシュ関数にscryptを採用している点や、最終的に発行する通貨量がビットコインよりも多めに発行している点などがあります。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>ビットコインなどの比較的有名な暗号通貨ではなく、monacoinを決済に使うことの利点は何ですか？</h4>
+                        <p>残念ながら、monacoinは現在あまり有名な通貨ではないので実際の場面で使える機会は多くありません。しかし、現在のmonacoinコミュニティは消費需要が高いものの供給が少ない状態にあるため、自身のコンテンツをmonapayを使用して発信することは効率よくmonacoinを回収しつつ、日本のユーザに対して自身のコンテンツを宣伝することに繋がります。</p>
+                    </div>
+                </div>
+                <h3><i class="fa fa-info-circle"></i> monapayについて</h3>
+                <div class="row">
+                    <div class="col-xs-12 item-qanda">
+                        <h4>送金にかかる時間は大体どれくらいですか？</h4>
+                        <p>送金した金額に依存します。金額が多い場合はConfirmationsを多くとることにしていますのでその分時間がかかります。商品の値段が小額の場合は数分程度で決済が完了します。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>決済ページから送金したにも関わらず、送金が確認できていないという類のメッセージが出ます。</h4>
+                        <p>仕様上、送金処理がネットワーク全体に広まるまで少し時間がかかります。送金処理のConfirmationsが2, 3回程度になったことを確認してからもう一度確認ボタンを押してください。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>商品の価格よりも多くの金額を送金してしまったのですが、返金されますか？</h4>
+                        <p>商品の価格よりも多くの金額を送金した場合、その分の金額はコンテンツ製作者に対する寄付とみなされ製作者のウォレットに入金されます。返金を希望する方は製作者に連絡をとっていただくようお願いします。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>決済処理を終えた後間違ってブラウザを閉じてしまいました。その場合でももう一度最初から決済する必要がありますか？</h4>
+                        <p>もう一度同じブラウザを立ち上げてから購入ページへ移動してください、ダウンロードページへ自動的に移動します。このダウンロードページは決済から2週間程度有効です。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>商品の値段や説明文を後で変更することはできますか？</h4>
+                        <p>商品の投稿後に表れる管理者用のシークレットURLから変更できます。商品の売り切れなどに利用できる、決済画面の無効化もこのページより行えます。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>シークレットURLを忘れてしまったのですが、再発行できますか？</h4>
+                        <p>シークレットURLの再発行は原則として行っていませんが、不正利用などの緊急事態の際にはサポートよりお知らせ下さい。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>シークレットURLが外部に漏れてしまったのですが、どうすればいいですか？</h4>
+                        <p>一旦シークレットURLにアクセスし商品の決済画面を無効化した後で、もう一度同じ商品を登録して頂くようお願いします。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>振込先を変更できますか？もしくは、商品の決済画面の無効化を取り消すことはできますか？</h4>
+                        <p>セキュリティ上の観点から、決済の振込先を変更したり、一度無効化した決済画面を再度有効にすることはできません。</p>
+                    </div>
+                    <div class="col-xs-12 item-qanda">
+                        <h4>私の著作物が勝手にmonapayで売りだされていました。</h4>
+                        <p>著作物の不正利用に関してはお手数ですがサポートよりご一報ください。できる限り迅速に対応いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
